@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Northland Electric - Licensed electricians serving the greater metro area. 24/7 emergency service. Residential & commercial. Free estimates.">
+    <title>Northland Electric | Licensed Electricians | 24/7 Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f2744;
+            --accent: #f59e0b;
+            --blue: #2563eb;
+            --white: #ffffff;
+            --light: #f0f7ff;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 5%;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .emergency-badge {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.75rem;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--blue);
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--blue);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .nav-phone:hover {
+            background: #1d4ed8;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+            color: var(--white);
+            padding: 100px 5%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--white);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .hero-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            color: var(--primary);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .hero-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-form .subtext {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--blue);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            background: var(--light);
+            padding: 40px 5%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badges-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+        }
+
+        .badge-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.75rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 5%;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .why-us .section-header h2 {
+            color: var(--white);
+        }
+
+        .why-us .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .why-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Reviews */
+        .reviews {
+            padding: 100px 5%;
+            background: var(--light);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .review-stars {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .review-avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .review-name {
+            font-weight: 600;
+        }
+
+        .review-source {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 5%;
+            background: var(--blue);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta .btn-primary {
+            background: var(--white);
+            color: var(--blue);
+        }
+
+        .cta .btn-secondary {
+            border-color: var(--white);
+        }
+
+        .cta .btn-secondary:hover {
+            background: var(--white);
+            color: var(--blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 5% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            color: var(--accent);
+        }
+
+        .footer-column a,
+        .footer-column p {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-inner {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-form {
+                margin-top: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .badges-grid {
+                gap: 2rem;
+            }
+
+            .services-grid,
+            .reviews-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div>⚡ 24/7 Emergency Service: <a href="tel:6125550198">(612) 555-0198</a></div>
+            <div class="emergency-badge">Same-Day Service Available</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                Northland <span>Electric</span>
+            </a>
+            <div class="nav-links">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="tel:6125550198" class="nav-phone">
+                    📞 (612) 555-0198
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>Licensed Electricians You Can <span>Trust</span></h1>
+                <p>From panel upgrades to emergency repairs, we keep your home and business powered safely. Serving the metro area for over 20 years.</p>
+                <div class="hero-buttons">
+                    <a href="tel:6125550198" class="btn-primary">📞 Call Now</a>
+                    <a href="#services" class="btn-secondary">View Services</a>
+                </div>
+            </div>
+            
+            <form class="hero-form" id="contact-form">
+                <h3>Get a Free Estimate</h3>
+                <p class="subtext">We'll respond within 2 hours</p>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number *" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address *" required>
+                </div>
+                
+                <div class="form-group">
+                    <select>
+                        <option value="">Select Service Needed</option>
+                        <option value="panel">Panel Upgrade</option>
+                        <option value="outlet">Outlets & Switches</option>
+                        <option value="lighting">Lighting Installation</option>
+                        <option value="wiring">Wiring & Rewiring</option>
+                        <option value="ev">EV Charger Installation</option>
+                        <option value="emergency">Emergency Repair</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea rows="3" placeholder="Describe your electrical issue..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Get Free Estimate →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="badges-grid">
+            <div class="badge-item">
+                <span class="badge-icon">🛡️</span>
+                <span class="badge-text">Licensed & Insured</span>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">⏰</span>
+                <span class="badge-text">24/7 Emergency Service</span>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">💰</span>
+                <span class="badge-text">Upfront Pricing</span>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">✅</span>
+                <span class="badge-text">Satisfaction Guaranteed</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Electrical Services</h2>
+            <p>Full-service electrical solutions for homes and businesses. All work guaranteed.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h3>Panel Upgrades</h3>
+                <p>Upgrade your electrical panel for safety and increased capacity.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Lighting Installation</h3>
+                <p>Indoor, outdoor, and specialty lighting for any space.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Outlet & Switch Repair</h3>
+                <p>Fix faulty outlets, add new circuits, and upgrade switches.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Whole-Home Rewiring</h3>
+                <p>Complete rewiring for older homes to meet modern standards.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>EV Charger Installation</h3>
+                <p>Level 2 charger installation for your electric vehicle.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Electric</h3>
+                <p>Office, retail, and industrial electrical services.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔋</div>
+                <h3>Generator Installation</h3>
+                <p>Backup power solutions for peace of mind.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🚨</div>
+                <h3>Emergency Repairs</h3>
+                <p>24/7 service for urgent electrical problems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="section-header">
+            <h2>Why Choose Northland Electric?</h2>
+            <p>Numbers that speak for themselves.</p>
+        </div>
+        
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-number">20+</div>
+                <div class="why-label">Years in Business</div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">5,000+</div>
+                <div class="why-label">Jobs Completed</div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">4.9★</div>
+                <div class="why-label">Google Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Real reviews from real customers.</p>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Called at 10pm with no power to half my house. They were here within an hour and had it fixed by midnight. Lifesavers!"</div>
+                <div class="review-author">
+                    <div class="review-avatar">👤</div>
+                    <div>
+                        <div class="review-name">Mike T.</div>
+                        <div class="review-source">Google Review</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Had them install an EV charger in my garage. Fair price, clean work, and they explained everything. Highly recommend."</div>
+                <div class="review-author">
+                    <div class="review-avatar">👤</div>
+                    <div>
+                        <div class="review-name">Jennifer L.</div>
+                        <div class="review-source">Google Review</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Upgraded our 60-year-old panel to 200 amps. Professional, on time, and passed inspection first try. Will use again."</div>
+                <div class="review-author">
+                    <div class="review-avatar">👤</div>
+                    <div>
+                        <div class="review-name">Robert & Sue K.</div>
+                        <div class="review-source">Google Review</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="cta">
+        <h2>Ready to Get Started?</h2>
+        <p>Call now for same-day service or schedule your free estimate.</p>
+        <div class="cta-buttons">
+            <a href="tel:6125550198" class="btn-primary">📞 (612) 555-0198</a>
+            <a href="#" class="btn-secondary" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'}); return false;">Request Estimate</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">⚡ Northland Electric</a>
+                <p>Licensed electricians serving the Twin Cities metro area. Residential and commercial electrical services with 24/7 emergency support.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Services</h4>
+                <a href="#services">Panel Upgrades</a>
+                <a href="#services">Lighting</a>
+                <a href="#services">EV Chargers</a>
+                <a href="#services">Emergency Repair</a>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>📞 (612) 555-0198</p>
+                <p>✉️ info@northlandelectric.com</p>
+                <p>🕐 24/7 Emergency Service</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Service Areas</h4>
+                <a href="#">Minneapolis</a>
+                <a href="#">St. Paul</a>
+                <a href="#">Bloomington</a>
+                <a href="#">Maple Grove</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>© 2024 Northland Electric. All rights reserved.</div>
+            <div>MN License #EA-012345</div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll contact you within 2 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
